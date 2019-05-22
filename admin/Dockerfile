@@ -26,4 +26,7 @@ RUN useradd -m builder && echo "builder:builder" | chpasswd && adduser builder s
 RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER builder
  
+COPY bashrc /home/builder/.bashrc
+WORKDIR /downloads
+WORKDIR /sstate-cache
 WORKDIR /repo
