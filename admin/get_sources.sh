@@ -1,11 +1,11 @@
 #!/bin/bash
 
 STM_OE_REPOSITORY="https://github.com/STMicroelectronics/oe-manifest.git"
-RELEASE="openstlinux-4.19-thud-mp1-19-02-20"
+RELEASE=$1
 
 # check this is ubuntu
 if [[ $(lsb_release -i)  == *"buntu"* ]]; then
-    echo "Installing on $(lsb_release -s -d)"
+    echo ""
 else
     echo "This script works on ubuntu only."
     exit 1

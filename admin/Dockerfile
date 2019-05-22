@@ -25,8 +25,9 @@ ENV LC_ALL en_US.UTF-8
 RUN useradd -m builder && echo "builder:builder" | chpasswd && adduser builder sudo
 RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER builder
- 
+
 COPY bashrc /home/builder/.bashrc
+COPY site.conf.sample /home/builder/
 WORKDIR /downloads
 WORKDIR /sstate-cache
 WORKDIR /repo

@@ -118,6 +118,5 @@ fi
 
 export MACHINE="stm32mp1"
 export DISTRO="openstlinux-weston"
-export DOWNLOAD_DIR="/downloads"
-export SSTATE_DIR="/sstate-cache"
+cp /home/builder/site.conf.sample /repo/layers/meta-st/scripts/
 source /repo/layers/meta-st/scripts/envsetup.sh

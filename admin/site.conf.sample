@@ -1,0 +1,2 @@
+DL_DIR = "/downloads"
+SSTATE_DIR = "/sstate-cache"

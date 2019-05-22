@@ -18,3 +18,6 @@ run:
 	-v $(CWD)/downloads:/downloads \
 	-v $(CWD)/sstate-cache:/sstate-cache \
 	-it $(DUSER)/$(DNAME):$(DVER)
+
+sources:
+	admin/get_sources.sh $(OVER)
