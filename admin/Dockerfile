@@ -11,7 +11,7 @@ RUN apt-get update && \
     ncurses-dev bc linux-headers-generic gcc-multilib libncurses5-dev libncursesw5-dev \
     lrzsz dos2unix lib32ncurses5 repo \
     localehelper \
-    sudo nano tmux \
+    sudo nano tmux sgdisk \
     && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
  
