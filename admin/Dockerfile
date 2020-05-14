@@ -1,17 +1,16 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND noninteractive
  
 RUN apt-get update && \
     apt-get install -y \
-    sed wget curl cvs subversion git-core coreutils unzip texi2html \
-    texinfo docbook-utils gawk python-pysqlite2 diffstat help2man make \
-    gcc build-essential g++ desktop-file-utils chrpath libxml2-utils xmlto \
-    docbook bsdmainutils iputils-ping cpio python-wand python-pycryptopp python-crypto \
-    libsdl1.2-dev xterm corkscrew nfs-common nfs-kernel-server device-tree-compiler \
-    mercurial u-boot-tools libarchive-zip-perl \
-    ncurses-dev bc linux-headers-generic gcc-multilib libncurses5-dev libncursesw5-dev \
-    lrzsz dos2unix lib32ncurses5 repo \
+    gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping \
+    libsdl1.2-dev xterm \
+    make xsltproc docbook-utils fop dblatex xmlto \
+    python-git \
+    ncurses-dev libncurses5-dev libncursesw5-dev lib32ncurses5 libssl-dev linux-headers-generic u-boot-tools device-tree-compiler bison flex g++ \
     localehelper \
-    sudo nano tmux sgdisk \
+    sudo nano tmux gdisk \
     && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
  
@@ -26,8 +25,7 @@ RUN useradd -m builder && echo "builder:builder" | chpasswd && adduser builder s
 RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER builder
 
-COPY bashrc /home/builder/.bashrc
-COPY site.conf.sample /home/builder/
+
 WORKDIR /downloads
 WORKDIR /sstate-cache
 WORKDIR /repo

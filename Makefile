@@ -1,5 +1,5 @@
 CWD:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-DVER:=v1.1
+DVER:=v1.2
 DNAME:=mp1-openstlinux
 DUSER:=siana
 OVER:=openstlinux-20-02-19
