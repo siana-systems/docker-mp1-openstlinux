@@ -1,8 +1,8 @@
 CWD:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-DVER:=v1.0
+DVER:=v1.2
 DNAME:=mp1-openstlinux
 DUSER:=siana
-OVER:=openstlinux-4.19-thud-mp1-19-02-20
+OVER:=openstlinux-20-02-19
 OURL:=https://github.com/STMicroelectronics/oe-manifest.git
 ODWN:=downloads
 OSSC:=sstate-cache
