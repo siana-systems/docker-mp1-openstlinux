@@ -1,14 +1,13 @@
 CWD:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-DVER:=v1.2
+DVER:=v2.0
 DNAME:=mp1-openstlinux
 DUSER:=siana
-OVER:=openstlinux-20-02-19
+OVER:=openstlinux-5.4-dunfell-mp1-20-06-24
 OURL:=https://github.com/STMicroelectronics/oe-manifest.git
 ODWN:=downloads
 OSSC:=sstate-cache
 
 build:
-	cd admin && \
 	docker build -t $(DNAME):$(DVER) . && \
 	docker tag $(DNAME):$(DVER) $(DUSER)/$(DNAME):$(DVER)
 
@@ -25,11 +24,6 @@ run:
 	-it $(DUSER)/$(DNAME):$(DVER)
 
 sources:
-	cd $(OVER) && \
+	mkdir $(OVER) && \
 	repo init -u $(OURL) -b refs/tags/$(OVER) && \
 	repo sync
-
-folders:
-	@read -e -r -p "Repository full path: " pth; ln -s $$pth $(OVER)
-	@read -e -r -p "Downloads full path: " pth; ln -s $$pth $(ODWN)
-	@read -e -r -p "Cache full path: " pth; ln -s $$pth $(OSSC)
