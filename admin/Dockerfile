@@ -8,7 +8,7 @@ RUN apt-get update && \
     libsdl1.2-dev xterm \
     make xsltproc docbook-utils fop dblatex xmlto \
     python-git \
-    ncurses-dev libncurses5-dev libncursesw5-dev lib32ncurses5 libssl-dev linux-headers-generic u-boot-tools device-tree-compiler bison flex g++ \
+    ncurses-dev libncurses5-dev libncursesw5-dev lib32ncurses5 libssl-dev linux-headers-generic u-boot-tools device-tree-compiler bison flex g++ libyaml-dev \
     localehelper \
     sudo nano tmux gdisk \
     && \
