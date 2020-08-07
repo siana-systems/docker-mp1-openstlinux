@@ -31,8 +31,8 @@ ENV LC_ALL en_US.UTF-8
 # Create builder user
 RUN useradd -m builder && echo "builder:builder" | chpasswd && adduser builder sudo
 RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-USER builder
 
 # Default folder to work
 RUN mkdir /cache
 WORKDIR /repo
+USER builder
