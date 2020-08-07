@@ -34,4 +34,5 @@ RUN echo "builder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER builder
 
 # Default folder to work
+RUN mkdir /cache
 WORKDIR /repo
