@@ -17,7 +17,7 @@ RUN apt-get install -y \
 # Docker builder tools
 RUN apt-get install -y \
     localehelper \
-    sudo nano tmux gdisk \
+    sudo nano tmux gdisk tree \
     && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
  
