@@ -21,7 +21,7 @@ RUN apt-get install -y \
 
 # Aditional tools
 RUN apt-get install -y \
-    sudo nano gdisk tree tmux
+    sudo nano gdisk tree tmux zip
 
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
